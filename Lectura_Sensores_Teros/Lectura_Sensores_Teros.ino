@@ -16,9 +16,11 @@ SDI12 mySDI12(DATA_PIN);
  * FUNCIONES
  ********************************************************/
  /*********************************************************
+ * lectura_temperatura_suelo_teros(String sensor);
  * Devuelve el valor de temperatura del suelo
  * solicitado de uno de los sensores Teros, necesita de 
  * la función getValue para funcionar
+ * String sensor: Numero con el que esta registrado cada sensor con el protocolo SDI
  ********************************************************/
 String lectura_temperatura_suelo_teros(String sensor){
   String myCommand = sensor + "R0!";
@@ -36,9 +38,11 @@ String lectura_temperatura_suelo_teros(String sensor){
  return string_temperatura_sensor;  
 }
  /*********************************************************
+ * String lectura_humedad_suelo_teros(String sensor);
  * Devuelve el valor de humedad del suelo
  * solicitado de uno de los sensores Teros, necesita de 
  * la función getValue para funcionar
+ * String sensor: Numero con el que esta registrado cada sensor con el protocolo SDI
  ********************************************************/
 String lectura_humedad_suelo_teros(String sensor){
   String myCommand = sensor + "R0!";
@@ -58,9 +62,11 @@ String lectura_humedad_suelo_teros(String sensor){
  return humedad_real_string;
 }
  /*********************************************************
+ * String lectura_temperatura_suelo_echo(String sensor);
  * Devuelve el valor de temperatura del suelo
  * solicitado de uno de los sensores Echo, necesita de 
  * la función getValue para funcionar
+ * String sensor: Numero con el que esta registrado cada sensor con el protocolo SDI
  ********************************************************/
 String lectura_temperatura_suelo_echo(String sensor){
   String myCommand = sensor + "R0!";
@@ -78,9 +84,11 @@ String lectura_temperatura_suelo_echo(String sensor){
  return string_temperatura_sensor;  
 }
  /*********************************************************
+ * String lectura_humedad_suelo_echo(String sensor);
  * Devuelve el valor de temperatura del suelo
  * solicitado de uno de los sensores Echo, necesita de 
  * la función getValue para funcionar
+ * String sensor: Numero con el que esta registrado cada sensor con el protocolo SDI
  ********************************************************/
  String lectura_humedad_suelo_echo(String sensor){
   String myCommand = sensor + "R0!";
@@ -99,9 +107,13 @@ String lectura_temperatura_suelo_echo(String sensor){
  return humedad_real_string;
 }
 /********************************************************* 
+ * String getValue(String data, char separator, int index);
  * Obtiene los valores de Humedad o Temperatura del suelo 
  * del String que se obtiene de la lectura del sensor
  * mediante el protocolo SDI.
+ * String data: Cadena que se recibe del protocolo SDI.
+ * char separator: Caracter con el que está separado cada uno de los datos en la cadena.
+ * int index: Posición del dato deseado de la cadena.
  ********************************************************/
 String getValue(String data, char separator, int index){
   int found = 0;
