@@ -134,8 +134,7 @@ String getValue(String data, char separator, int index){
 
 void setup() {
   Serial.begin(SERIAL_BAUD);
-  while (!Serial)
-    ;
+  while (!Serial);
   Serial.println("Opening SDI-12 bus...");
   mySDI12.begin();
   delay(500);  // allow things to settle
